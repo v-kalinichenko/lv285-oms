@@ -40,7 +40,6 @@ steps:
         password: $DOCKER_PASSWORD
         tag: latest
         repository: $DOCKER_REPOSITORY
-    # (9) configuration similar to dockerfile
      - script:
        code: |
         touch  $WERCKER_OUTPUT_DIR/deploy
