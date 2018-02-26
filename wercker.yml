@@ -14,8 +14,19 @@ build:
 # (4) create an name for that pipeline
 deploy:
   # (5) configure the container
-box:
-  tag: tomcat
+services:
+tomcat:
+    image: tomcat:7.0
+    build:
+        context: ./
+        dockerfile: Dockerfile
+    ports:
+        - 8888:8080
+    container_name: tomcat7
+    volumes:
+        - ./tomcat7:/usr/local/tomcat:rw
+    entrypoint: /bin/bash /usr/local/tomcat/bin/startup.sh
+    tty: true
 steps:
     # (6) moving our artifact to the final location
     - script:
@@ -30,9 +41,6 @@ steps:
         tag: latest
         repository: $DOCKER_REPOSITORY
         # (9) configuration similar to dockerfile
-        ports: "8080"
-        volumes:
-           - ./tomcat:/usr/local/tomcat/webapps/oms.war
      - script:
        code: |
         touch  $WERCKER_OUTPUT_DIR/deploy
