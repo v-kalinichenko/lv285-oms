@@ -416,11 +416,11 @@
       </execution>
     </executions>
     <configuration>
-<!--      <toolchains>
+     <toolchains>
         <jdk>
-          <version>8</version>
+          <version>1.8</version>
         </jdk>
-      </toolchains> -->
+      </toolchains> 
     </configuration>
 </plugin>
 
