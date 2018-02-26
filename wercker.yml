@@ -3,8 +3,9 @@ box: maven:latest
 build:
   steps:
     # (2) a build step
-    - xenoterracide/maven:
-        goals: package spring-boot:repackage
+    - java/maven:
+        goals: clean package
+        version: 3.5.2
     - script:
         name: copy package to output
         # (3) copy artefact to output
