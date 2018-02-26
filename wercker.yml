@@ -3,8 +3,8 @@ box: maven:latest
 build:
   steps:
     # (2) a build step
-    - java/maven:
-        goals: clean package
+    - xenoterracide/maven:
+        goals: test
         version: 3.5.2
     - script:
         name: copy package to output
