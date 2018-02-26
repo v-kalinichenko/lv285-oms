@@ -18,7 +18,7 @@ deploy:
     id: java
     tag: 8-jre
     cmd: /bin/sh # see: http://devcenter.wercker.com/docs/faq/alpine-faq
-steps:
+  steps:
     # (6) moving our artifact to the final location
     - script:
       code: |
