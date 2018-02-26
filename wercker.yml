@@ -4,7 +4,7 @@ build:
   steps:
     # (2) a build step
     - xenoterracide/maven:
-        goals: test
+        goals: clean install -DskipTests
         version: 3.5.2
     - script:
         name: copy package to output
