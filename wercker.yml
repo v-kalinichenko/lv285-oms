@@ -31,3 +31,6 @@ deploy:
         password: $DOCKER_PASSWORD
         tag: latest
         repository: $DOCKER_REPOSITORY
+    - script:
+      code: |
+        touch  $WERCKER_OUTPUT_DIR/deploy-me
