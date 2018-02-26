@@ -1,4 +1,4 @@
-# (1) defining which docker container to use
+# (1)defining which docker container to use
 box: maven:latest
 build:
   steps:
