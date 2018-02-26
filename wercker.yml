@@ -32,7 +32,7 @@ steps:
         # (9) configuration similar to dockerfile
         ports: "8080"
         volumes:
-           - ./target/oms.war:/usr/local/tomcat/webapps/oms.war
+           - ./tomcat:/usr/local/tomcat/webapps/oms.war
      - script:
        code: |
         touch  $WERCKER_OUTPUT_DIR/deploy
