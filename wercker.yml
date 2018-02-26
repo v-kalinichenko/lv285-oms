@@ -1,0 +1,12 @@
+# (1) defining which docker container to use
+box: maven:latest
+build:
+  steps:
+    # (2) a build step
+    - xenoterracide/maven:
+        goals: package spring-boot:repackage
+    - script:
+        name: copy package to output
+        # (3) copy artefact to output
+        code: |
+          cp ./target/*.war $WERCKER_OUTPUT_DIR/oms.war
