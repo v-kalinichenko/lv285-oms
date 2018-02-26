@@ -16,15 +16,15 @@ deploy:
   # (5) configure the container
 services:
 tomcat:
-    image: tomcat:8
+    image: tomcat
     build:
         context: ./
         dockerfile: Dockerfile
     ports:
         - 8888:8080
-    container_name: tomcat8
+    container_name: tomcat
     volumes:
-        - ./tomcat7:/usr/local/tomcat:rw
+        - ./tomcat:/usr/local/tomcat:rw
     entrypoint: /bin/bash /usr/local/tomcat/bin/startup.sh
     tty: true
 steps:
