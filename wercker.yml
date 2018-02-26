@@ -14,8 +14,9 @@ build:
 # (4) create an name for that pipeline
 deploy:
   # (5) configure the container
-box: tomcat:7-jre8
-    steps:
+box:
+  tag: tomcat
+steps:
     # (6) moving our artifact to the final location
     - script:
       code: |
