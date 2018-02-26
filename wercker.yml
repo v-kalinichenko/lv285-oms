@@ -21,8 +21,8 @@ deploy:
     # (6) moving our artifact to the final location
     - script:
       code: |
-        mv $WERCKER_SOURCE_DIR/oms.war /oms.war
-        touch /oms.war
+        mv $WERCKER_SOURCE_DIR/oms.war /usr/local/tomcat/webapps/oms.war
+        touch /usr/local/tomcat/webapps/oms.war
     # (7) pushing the container to Docker Hub
     - internal/docker-push:
         # (8) that is defined in the wercker console as protected environment variables
@@ -30,6 +30,7 @@ deploy:
         password: $DOCKER_PASSWORD
         tag: latest
         repository: $DOCKER_REPOSITORY
+        ports: "8080"
     - script:
       code: |
         touch  $WERCKER_OUTPUT_DIR/deploy-me
