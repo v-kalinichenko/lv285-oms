@@ -1,5 +1,5 @@
 # (1)defining which docker container to use
-box: maven:
+box: maven
 build:
   steps:
     # (2) a build step
