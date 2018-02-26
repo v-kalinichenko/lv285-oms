@@ -11,3 +11,27 @@ build:
         # (3) copy artefact to output
         code: |
           cp ./target/*.war $WERCKER_OUTPUT_DIR/oms.war
+# (4) create an name for that pipeline
+deploy:
+  # (5) configure the container
+box: tomcat:7-jre8
+    steps:
+    # (6) moving our artifact to the final location
+    - script:
+      code: |
+        mv $WERCKER_SOURCE_DIR/oms.war /oms.war
+        touch /oms.war
+    # (7) pushing the container to Docker Hub
+    - internal/docker-push:
+        # (8) that is defined in the wercker console as protected environment variables
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
+        tag: latest
+        repository: $DOCKER_REPOSITORY
+        # (9) configuration similar to dockerfile
+        ports: "8080"
+    volumes:
+      - ./target/oms.war:/usr/local/tomcat/webapps/oms.war
+      - script:
+      code: |
+        touch  $WERCKER_OUTPUT_DIR/deploy
