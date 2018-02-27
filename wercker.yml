@@ -15,8 +15,8 @@ build:
 deploy:
   # (5) configure the container
   box:
-    id: tomcat
-    tag: 8
+    id: tomcat-mysql
+    tag: latest
   steps:
     # (6) moving our artifact to the final location
     - script:
