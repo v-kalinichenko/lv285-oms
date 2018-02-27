@@ -18,11 +18,10 @@ deploy:
       - id: mysql
         env:
         MYSQL_ROOT_PASSWORD: 123456
-        MYSQL_DATABASE: oms
-        
-    box:
-      id: tomcat
-     tag: 8
+        MYSQL_DATABASE: oms       
+  box:
+    id: tomcat
+    tag: 8
    steps:
     # (6) moving our artifact to the final location
     - script:
