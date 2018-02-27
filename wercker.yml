@@ -18,11 +18,12 @@ deploy:
     id: tomcat
     tag: 8
   db:
-  image: mysql
-  container_name: mysql-container
+  image: mysql:latest
   environment:
-   MYSQL_ROOT_PASSWORD: 123456
-   MYSQL_DATABASE: oms
+    MYSQL_ROOT_PASSWORD: 123456
+    MYSQL_DATABASE: oms
+    MYSQL_USER: oms
+    MYSQL_PASSWORD: 123456
   volumes:
    - /home/mysqlDB:/var/lib/mysql
   steps:
