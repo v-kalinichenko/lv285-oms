@@ -14,14 +14,14 @@ build:
 # (4) create an name for that pipeline
 deploy:
   # (5) configure the container
-  box:
-   - id: mysql
-     env:
-       MYSQL_ROOT_PASSWORD: 123456
-       MYSQL_DATABASE: oms
-   - id: tomcat
-    tag: 8
-  steps:
+    services:
+      - id: mysql
+        env:
+        MYSQL_ROOT_PASSWORD: 123456
+    box:
+      id: tomcat
+     tag: 8
+   steps:
     # (6) moving our artifact to the final location
     - script:
       code: |
