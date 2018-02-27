@@ -15,7 +15,8 @@ build:
 deploy:
   # (5) configure the container
   db:
-    image: mysql:latest
+    id: mysql
+    tag: latest
     environment:
       MYSQL_ROOT_PASSWORD: 123456
       MYSQL_DATABASE: oms
