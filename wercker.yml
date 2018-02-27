@@ -12,7 +12,8 @@ build:
         code: |
           cp ./target/*.war $WERCKER_OUTPUT_DIR/oms.war
 # (4) create an name for that pipeline
-deploy:
+# deploy:
+build:
   # (5) configure the container
   services:
     - id: mysql
