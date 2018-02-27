@@ -14,7 +14,8 @@ build:
 # (4) create an name for that pipeline
 deploy:
   # (5) configure the container
-  box: mysql
+  box: 
+    id: mysql
     tag: latest
     environment:
       MYSQL_ROOT_PASSWORD: 123456
