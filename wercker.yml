@@ -13,17 +13,16 @@ build:
           cp ./target/*.war $WERCKER_OUTPUT_DIR/oms.war
 # (4) create an name for that pipeline
 deploy:
-  # (5) configure the container
-  services:
-      - id: mysql
+  # (5) configure the container        
+  box:
+    id: mdelapenya
+    tag: tomcat-mysql
+    services:
         env:
           MYSQL_ROOT_PASSWORD: 123456
           MYSQL_DATABASE: oms
         volumes:
           - "/home/mysqlDB:/var/lib/mysql"
-  box:
-    id: tomcat
-    tag: 8
    steps:
     # (6) moving our artifact to the final location
     - script:
