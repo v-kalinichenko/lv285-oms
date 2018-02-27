@@ -23,7 +23,7 @@ deploy:
           MYSQL_DATABASE: oms
         volumes:
           - ./db:/var/lib/mysql/
-   steps:
+  steps:
     # (6) moving our artifact to the final location
     - script:
       code: |
