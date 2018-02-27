@@ -31,6 +31,9 @@ deploy:
         tag: latest
         repository: $DOCKER_REPOSITORY
         ports: "8080"
+        volumes:
+          - ./logs/:/usr/local/tomcat/logs/
+        entrypoint: /usr/local/tomcat/bin/catalina.sh run
     - script:
       code: |
-        touch  $WERCKER_OUTPUT_DIR/deploy-me
+        touch  $WERCKER_OUTPUT_DIR/oms
