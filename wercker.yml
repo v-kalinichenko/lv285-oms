@@ -14,8 +14,7 @@ build:
 # (4) create an name for that pipeline
 deploy:
   # (5) configure the container
-  db:
-    id: mysql
+  box: mysql
     tag: latest
     environment:
       MYSQL_ROOT_PASSWORD: 123456
@@ -45,7 +44,7 @@ deploy:
           - ./logs/:/usr/local/tomcat/logs/
         entrypoint: /usr/local/tomcat/bin/catalina.sh run
         links:
-          - db
+          - mysql
     - script:
       code: |
         touch  $WERCKER_OUTPUT_DIR/oms
