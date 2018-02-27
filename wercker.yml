@@ -17,8 +17,7 @@ deploy:
     services:
       - id: mysql
         env:
-          MYSQL_ROOT_PASSWORD: 123456
-          MYSQL_DATABASE: oms       
+          MYSQL_ROOT_PASSWORD:123456      
   box:
     id: tomcat
     tag: 8
@@ -35,7 +34,7 @@ deploy:
         password: $DOCKER_PASSWORD
         tag: latest
         repository: $DOCKER_REPOSITORY
-        ports: "8080"
+        ports: "8080:8080"
         volumes:
           - ./logs/:/usr/local/tomcat/logs/
         entrypoint: /usr/local/tomcat/bin/catalina.sh run
