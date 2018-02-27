@@ -20,13 +20,13 @@ deploy:
     environment:
       MYSQL_ROOT_PASSWORD: 123456
       MYSQL_DATABASE: oms
-      MYSQL_USER: oms
-      MYSQL_PASSWORD: 123456
     volumes:
        - /home/mysqlDB:/var/lib/mysql
-  box:
-    id: tomcat
-    tag: 8
+    links:
+       - tomcat
+  #box:
+  # id: tomcat
+  #  tag: 8
   steps:
     # (6) moving our artifact to the final location
     - script:
@@ -44,8 +44,6 @@ deploy:
         volumes:
           - ./logs/:/usr/local/tomcat/logs/
         entrypoint: /usr/local/tomcat/bin/catalina.sh run
-        links:
-          - mysql
     - script:
       code: |
         touch  $WERCKER_OUTPUT_DIR/oms
