@@ -15,10 +15,10 @@ build:
 deploy:
   # (5) configure the container
   services:
-    id: mysql
-    env:
-      MYSQL_ROOT_PASSWORD: 123456
-      MYSQL_DATABASE: oms
+   - id: mysql
+     env:
+       MYSQL_ROOT_PASSWORD: 123456
+       MYSQL_DATABASE: oms
   box:
     id: tomcat
     tag: 8
