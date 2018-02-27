@@ -14,9 +14,6 @@ build:
 # (4) create an name for that pipeline
 deploy:
   # (5) configure the container
-  box:
-    id: tomcat
-    tag: 8
   db:
   image: mysql:latest
   environment:
@@ -26,6 +23,9 @@ deploy:
     MYSQL_PASSWORD: 123456
   volumes:
    - /home/mysqlDB:/var/lib/mysql
+  box:
+    id: tomcat
+    tag: 8
   steps:
     # (6) moving our artifact to the final location
     - script:
@@ -43,6 +43,8 @@ deploy:
         volumes:
           - ./logs/:/usr/local/tomcat/logs/
         entrypoint: /usr/local/tomcat/bin/catalina.sh run
+        links:
+          - db
     - script:
       code: |
         touch  $WERCKER_OUTPUT_DIR/oms
