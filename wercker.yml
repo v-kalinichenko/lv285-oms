@@ -17,10 +17,7 @@ deploy:
   box:
     id: mdelapenya
     tag: tomcat-mysql
-    env:
-       MYSQL_ROOT_PASSWORD: 123456
-       MYSQL_DATABASE: oms
-   steps:
+  steps:
     # (6) moving our artifact to the final location
     - script:
       code: |
