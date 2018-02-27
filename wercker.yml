@@ -17,7 +17,8 @@ deploy:
     services:
       - id: mysql
         env:
-          MYSQL_ROOT_PASSWORD:123456      
+          'MYSQL_ROOT_PASSWORD:123456'
+          'MYSQL_DATABASE: oms'
   box:
     id: tomcat
     tag: 8
