@@ -12,14 +12,13 @@ build:
         code: |
           cp ./target/*.war $WERCKER_OUTPUT_DIR/oms.war
 # (4) create an name for that pipeline
-# deploy:
-build:
+deploy:
   # (5) configure the container
   services:
-    - id: mysql
-      env:
-        MYSQL_ROOT_PASSWORD: 123456
-        MYSQL_DATABASE: oms
+    id: mysql
+    env:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: oms
   box:
     id: tomcat
     tag: 8
