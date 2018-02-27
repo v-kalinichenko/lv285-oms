@@ -17,6 +17,14 @@ deploy:
   box:
     id: tomcat
     tag: 8
+  db:
+  image: mysql
+  container_name: mysql-container
+  environment:
+   MYSQL_ROOT_PASSWORD: 123456
+   MYSQL_DATABASE: oms
+  volumes:
+   - /home/mysqlDB:/var/lib/mysql
   steps:
     # (6) moving our artifact to the final location
     - script:
