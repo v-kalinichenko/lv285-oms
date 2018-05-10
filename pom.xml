@@ -259,6 +259,17 @@
 			</snapshots>
 		</repository>
 	</repositories>
+	<build>
+  <pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>3.3</version>
+      </plugin>
+    </plugins>
+  </pluginManagement>
+</build>
 	
 	<build>
 		<plugins>
@@ -377,11 +388,11 @@
 <!-- </plugin> -->
 
 
-<plugin>
+<!-- <plugin>
     <groupId>org.sonarsource.scanner.maven</groupId>
     <artifactId>sonar-maven-plugin</artifactId>
     <version>3.3</version>
-    <!--<executions>
+    <executions>
         <execution>
             <id>report</id>
             <phase>test</phase>
@@ -396,8 +407,8 @@
                 </sourceSets>
             </configuration>
         </execution>
-    </executions> -->
-</plugin>
+    </executions>
+</plugin> -->
 			
 		
 	
