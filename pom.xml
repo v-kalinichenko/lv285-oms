@@ -381,7 +381,7 @@
     <groupId>org.sonarsource.scanner.maven</groupId>
     <artifactId>sonar-maven-plugin</artifactId>
     <version>3.3</version>
-    <executions>
+    <!--<executions>
         <execution>
             <id>report</id>
             <phase>test</phase>
@@ -396,7 +396,7 @@
                 </sourceSets>
             </configuration>
         </execution>
-    </executions>
+    </executions> -->
 </plugin>
 			
 		
