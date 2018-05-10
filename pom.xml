@@ -283,7 +283,6 @@
 					<warName>OMS</warName>
 				</configuration>
 			</plugin>
-			<build>
 
                         <plugin>
                               <groupId>org.sonarsource.scanner.maven</groupId>
