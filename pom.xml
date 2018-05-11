@@ -5,9 +5,9 @@
 	
 	<groupId>com.softserveinc</groupId>
 	<artifactId>OMS-part2</artifactId>
-	<version>1.0</version>
+	<version>1.1</version>
 
-	<name>OMS</name>
+	<name>OMS-par2</name>
 	<packaging>war</packaging>
 	
 	<properties>
